@@ -1,0 +1,55 @@
+<%= form_with(model: user) do |form| %>
+  <% if user.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :nickName, style: "display: block" %>
+    <%= form.text_field :nickName %>
+  </div>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :eMail, style: "display: block" %>
+    <%= form.text_field :eMail %>
+  </div>
+
+  <div>
+    <%= form.label :phoneNumber, style: "display: block" %>
+    <%= form.number_field :phoneNumber %>
+  </div>
+
+  <div>
+    <%= form.label :login, style: "display: block" %>
+    <%= form.text_field :login %>
+  </div>
+
+  <!-- <div>
+    <%= form.label :password_digest, style: "display: block" %>
+    <%= form.text_field :password_digest %>
+  </div> -->
+  <div class="field">
+  <%= form.label :password, style: "display: block" %>
+  <%= form.password_field :password, id: :user_password %>
+  </div>
+  <div class="field">
+    <%= form.label :password_confirmation, style: "display: block" %>
+    <%= form.password_field :password_confirmation, id: :user_password_confirmation %>
+</div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

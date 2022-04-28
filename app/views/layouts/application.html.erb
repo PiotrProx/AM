@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Help Desk Forum</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  </head>
+
+  <body>
+    <% if logged_in? %>
+      Zalogowany jako <%= current_user.login %>
+      <%= link_to "Profil", current_user, style: "display: block" %>
+      <%= link_to "Wyloguj", logout_path, method: :delete %>
+    <% else %>
+      <%= link_to "Zaloguj", login_path %>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>

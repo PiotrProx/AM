@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @repair_offer %>
+
+<div>
+  <%= link_to "Edit this repair offer", edit_repair_offer_path(@repair_offer) %> |
+  <%= link_to "Back to repair offers", repair_offers_path %>
+
+  <%= button_to "Destroy this repair offer", @repair_offer, method: :delete %>
+</div>

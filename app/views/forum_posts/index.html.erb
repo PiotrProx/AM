@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Forum posts</h1>
+
+<div id="forum_posts">
+  <% @forum_posts.each do |forum_post| %>
+    <%= render forum_post %>
+    <p>
+      <%= link_to "Show this forum post", forum_post %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New forum post", new_forum_post_path %>
